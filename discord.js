@@ -23,4 +23,14 @@ let s = setInterval(function() {
       divElement.style.backgroundImage = 'url("/assets/56d360a7672d87843eaa.png")';
     }
   }
-}, 200);
+  // украшение (бетта)
+    const avatarStack2Element = document.querySelector('.avatarStack__6604a');
+  if (avatarStackElement) {
+    const imgElement = document.createElement('img');
+    imgElement.setAttribute('class', 'avatar__991e2');
+    imgElement.setAttribute('src', 'https://cdn.discordapp.com/avatar-decoration-presets/a_fed43ab12698df65902ba06727e20c0e.png?size=240&passthrough=false');
+    imgElement.setAttribute('alt', ' ');
+    imgElement.setAttribute('aria-hidden', 'true');
+    avatarStackElement.appendChild(imgElement);
+  }
+}, 250);
