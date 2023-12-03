@@ -24,7 +24,7 @@ let s = setInterval(function() {
     }
   }
   // украшение (бетта)
-    const avatarStack2Element = document.querySelector('.avatarStack__6604a');
+    const avatarStackElement = document.querySelector('.avatarStack__6604a');
   if (avatarStackElement) {
     const imgElement = document.createElement('img');
     imgElement.setAttribute('class', 'avatar__991e2');
