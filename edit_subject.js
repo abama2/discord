@@ -38,3 +38,5 @@ const updateUI = () => {
 
 // Вызываем функцию обновления интерфейса каждые 250 миллисекунд
 const sw = setInterval(updateUI, 250);
+
+// clearInterval(sw)
