@@ -1,4 +1,3 @@
-// эта версия более оптимизированная
 const updateUI = () => {
   // Устанавливаем класс в элементе <html>
   const htmlElement = document.querySelector('html');
@@ -35,16 +34,28 @@ const updateUI = () => {
     imgElement.setAttribute('aria-hidden', 'true');
     avatarStackElement.appendChild(imgElement);
   }
+  observer.disconnect();
 };
 
-const buttonElement = document.querySelector('html');
-buttonElement.addEventListener('click', () => {
-  // Вызываем функцию обновления интерфейса
-  updateUI();
+const observerCallback = (mutationsList, observer) => {
+  for (const mutation of mutationsList) {
+    if (mutation.type === 'childList') {
+      updateUI();
 
-  // Очищаем интервал после выполнения функции обновления интерфейса
-  clearInterval(sw);
-});
+      // После обновления интерфейса пользователя можно снова включить наблюдатель изменений
+      observer.observe(targetNode, observerOptions);
+      break;
+    }
+  }
+};
 
-// Создаем интервал, но не вызываем функцию обновления интерфейса сразу
-const sw = setInterval(() => {}, 250);
+// Создаем наблюдатель за изменениями в HTML
+const observer = new MutationObserver(observerCallback);
+const targetNode = document.querySelector('head');
+const observerOptions = {
+  childList: true,
+  subtree: true
+};
+
+// Запускаем наблюдение за изменениями
+observer.observe(targetNode, observerOptions);
