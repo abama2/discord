@@ -16,6 +16,17 @@ const updateUI = () => {
   // Добавляем стиль в раздел <head>
   const headElement = document.querySelector('head');
   headElement.appendChild(styleElement);
+  // Обновляем цвет фона для элемента .gridContainer_de8cdc
+  const gridContainerElement = document.querySelector('.gridContainer_de8cdc');
+  if (gridContainerElement) {
+    gridContainerElement.style.background = 'linear-gradient(64.92deg, var(--bg-gradient-crimson-moon-1) 16.17%, var(--bg-gradient-crimson-moon-2) 72%)';
+  }
+
+  // Обновляем цвет фона для элемента .chatHeaderBar__28ee6
+  const chatHeaderBarElement = document.querySelector('.chatHeaderBar__28ee6');
+  if (chatHeaderBarElement) {
+    chatHeaderBarElement.style.background = 'linear-gradient(64.92deg, var(--bg-gradient-crimson-moon-1) 16.17%, var(--bg-gradient-crimson-moon-2) 72%)';
+  }
 
   // Обновляем фото баннера
   const divElement = document.querySelector('.banner__6d414.popoutBanner__9f5b9');
